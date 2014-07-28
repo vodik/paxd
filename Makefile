@@ -8,10 +8,11 @@ else
 	CFLAGS += -Wall -Wextra
 endif
 
-all: apply-pax-flags paxd
+all: apply-pax-flags paxd getpax
 apply-pax-flags: apply-pax-flags.o flags.o
 paxd: paxd.o flags.o
 flags: flags.c flags.h
+getpax: getpax.o flags.o
 
 clean:
 	rm -f apply-pax-flags apply-pax-flags.o paxd paxd.o flags.o
